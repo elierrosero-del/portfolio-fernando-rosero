@@ -37,7 +37,7 @@ export function ContactSection() {
         >
           {/* Left Column - Contact Info */}
           <motion.div variants={fadeUp} className="space-y-6">
-            <p className="text-lg text-steel-light leading-relaxed">
+            <p className="text-lg dark:text-[#C5CED9] light:text-[#4B5563] leading-relaxed">
               Estoy siempre abierto a nuevas oportunidades y colaboraciones. 
               No dudes en contactarme a través de cualquiera de estos canales.
             </p>
@@ -47,14 +47,14 @@ export function ContactSection() {
               {/* Email */}
               <a
                 href={`mailto:${personalData.email}`}
-                className="flex items-start gap-4 p-4 rounded border border-steel-dark hover:border-gold-default bg-navy-panel/30 hover:bg-navy-panel/50 transition-all duration-300 group"
+                className="flex items-start gap-4 p-4 rounded dark:border-[#1F2E4D] light:border-[#D1D5DB] border dark:hover:border-[#F59E0B] light:hover:border-[#D97706] dark:bg-[#0F1A2E]/30 light:bg-[#F3F4F6]/30 dark:hover:bg-[#0F1A2E]/50 light:hover:bg-[#F3F4F6]/50 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded flex items-center justify-center bg-gold-default/20 group-hover:bg-gold-default/30 transition-colors flex-shrink-0">
-                  <Mail size={20} className="text-gold-default" />
+                <div className="w-12 h-12 rounded flex items-center justify-center dark:bg-[#F59E0B]/20 light:bg-[#D97706]/20 dark:group-hover:bg-[#F59E0B]/30 light:group-hover:bg-[#D97706]/30 transition-colors flex-shrink-0">
+                  <Mail size={20} className="dark:text-[#F59E0B] light:text-[#D97706]" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-cream">Email</p>
-                  <p className="text-sm text-steel-light break-all">
+                  <p className="text-sm font-semibold dark:text-[#F5F7FA] light:text-[#0F1A2E]">Email</p>
+                  <p className="text-sm dark:text-[#C5CED9] light:text-[#4B5563] break-all">
                     {personalData.email}
                   </p>
                 </div>

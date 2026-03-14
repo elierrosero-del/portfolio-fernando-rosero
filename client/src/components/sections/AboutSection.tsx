@@ -18,7 +18,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 md:py-32 relative overflow-hidden bg-navy-mid"
+      className="py-20 md:py-32 relative overflow-hidden dark:bg-[#141B2D] light:bg-[#F9FAFB]"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
@@ -46,7 +46,7 @@ export function AboutSection() {
             </div>
 
             {/* Bio Text */}
-            <p className="text-lg text-steel-light leading-relaxed">
+            <p className="text-lg dark:text-[#C5CED9] light:text-[#4B5563] leading-relaxed">
               Soy un profesional con formación dual en Ingeniería de Software y Contaduría Pública. 
               Mi pasión es crear soluciones tecnológicas que impacten positivamente en los negocios.
             </p>
@@ -55,20 +55,20 @@ export function AboutSection() {
             <div className="space-y-3">
               <PortfolioBadge variant="outline" icon={<span className="text-sm">💻</span>}>
                 <div>
-                  <p className="font-mono text-xs text-gold-default">Full-Stack Developer</p>
-                  <p className="text-xs text-steel-light">Especializado en Next.js y Node.js</p>
+                  <p className="font-mono text-xs dark:text-[#F59E0B] light:text-[#D97706]">Full-Stack Developer</p>
+                  <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">Especializado en Next.js y Node.js</p>
                 </div>
               </PortfolioBadge>
               <PortfolioBadge variant="outline" icon={<span className="text-sm">📊</span>}>
                 <div>
-                  <p className="font-mono text-xs text-gold-default">Financial Analyst</p>
-                  <p className="text-xs text-steel-light">Análisis y auditoría financiera</p>
+                  <p className="font-mono text-xs dark:text-[#F59E0B] light:text-[#D97706]">Financial Analyst</p>
+                  <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">Análisis y auditoría financiera</p>
                 </div>
               </PortfolioBadge>
             </div>
 
             {/* More Info */}
-            <p className="text-sm text-steel-light">
+            <p className="text-sm dark:text-[#C5CED9] light:text-[#4B5563]">
               Cuando no estoy codificando, disfruto aprendiendo sobre finanzas descentralizadas, 
               arquitectura de software y contribuyendo a proyectos open source.
             </p>
@@ -83,7 +83,7 @@ export function AboutSection() {
 
             {/* Technical Skills */}
             <div>
-              <h3 className="text-sm font-mono text-gold-default mb-4 uppercase tracking-wider">
+              <h3 className="text-sm font-mono dark:text-[#F59E0B] light:text-[#D97706] mb-4 uppercase tracking-wider">
                 Habilidades Técnicas
               </h3>
               <div className="space-y-4">
@@ -99,7 +99,7 @@ export function AboutSection() {
 
             {/* Financial Skills */}
             <div>
-              <h3 className="text-sm font-mono text-gold-default mb-4 uppercase tracking-wider">
+              <h3 className="text-sm font-mono dark:text-[#F59E0B] light:text-[#D97706] mb-4 uppercase tracking-wider">
                 Habilidades Financieras
               </h3>
               <div className="space-y-4">

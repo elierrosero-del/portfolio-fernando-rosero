@@ -30,7 +30,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-20 md:py-32 relative overflow-hidden bg-navy-mid"
+      className="py-20 md:py-32 relative overflow-hidden dark:bg-[#141B2D] light:bg-[#F9FAFB]"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />

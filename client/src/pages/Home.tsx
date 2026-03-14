@@ -12,7 +12,7 @@ import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
  */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-navy-default text-cream">
+    <div className="min-h-screen dark:bg-[#0A0E1A] light:bg-white dark:text-[#F5F7FA] light:text-[#0F1A2E] transition-colors duration-300">
       {/* Custom Cursor */}
       <CustomCursor />
 

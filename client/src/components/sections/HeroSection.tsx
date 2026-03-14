@@ -35,26 +35,26 @@ export function HeroSection() {
             {/* Name */}
             <div>
               <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-display font-bold leading-tight">
-                <span className="text-cream">Fernando</span>
+                <span className="dark:text-[#F5F7FA] light:text-[#0F1A2E]">Fernando</span>
                 <br />
-                <span className="text-gold-default">Rosero</span>
+                <span className="dark:text-[#F59E0B] light:text-[#D97706]">Rosero</span>
               </motion.h1>
             </div>
 
             {/* Title */}
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-steel-light">
+            <motion.p variants={fadeUp} className="text-lg md:text-xl dark:text-[#C5CED9] light:text-[#4B5563]">
               {personalData.title}
             </motion.p>
 
             {/* Stats */}
             <motion.div variants={fadeUp} className="flex gap-6 flex-wrap">
               {personalData.stats.map((stat, idx) => (
-                <div key={idx} className="flex items-center gap-3 border-r border-steel-dark pr-6 last:border-r-0 last:pr-0">
+                <div key={idx} className="flex items-center gap-3 dark:border-r-[#1F2E4D] light:border-r-[#D1D5DB] border-r pr-6 last:border-r-0 last:pr-0">
                   <div>
-                    <p className="text-2xl md:text-3xl font-bold text-gold-default">
+                    <p className="text-2xl md:text-3xl font-bold dark:text-[#F59E0B] light:text-[#D97706]">
                       {stat.value}
                     </p>
-                    <p className="text-xs text-steel-light">{stat.label}</p>
+                    <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">{stat.label}</p>
                   </div>
                 </div>
               ))}
@@ -70,15 +70,15 @@ export function HeroSection() {
             {/* CV Download Bar */}
             <motion.div
               variants={fadeUp}
-              className="p-4 bg-navy-panel border border-steel-dark rounded flex items-center justify-between hover:border-gold-default transition-colors"
+              className="p-4 dark:bg-[#0F1A2E]/50 light:bg-[#F3F4F6] dark:border-[#1F2E4D] light:border-[#D1D5DB] border rounded flex items-center justify-between dark:hover:border-[#F59E0B] light:hover:border-[#D97706] transition-colors"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gold-default/20 rounded flex items-center justify-center">
-                  <FileText size={20} className="text-gold-default" />
+                <div className="w-10 h-10 dark:bg-[#F59E0B]/20 light:bg-[#D97706]/20 rounded flex items-center justify-center">
+                  <FileText size={20} className="dark:text-[#F59E0B] light:text-[#D97706]" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-cream">fernando-rosero-cv.pdf</p>
-                  <p className="text-xs text-steel-light">Currículum Vitae</p>
+                  <p className="text-sm font-medium dark:text-[#F5F7FA] light:text-[#0F1A2E]">fernando-rosero-cv.pdf</p>
+                  <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">Currículum Vitae</p>
                 </div>
               </div>
               <Button size="sm" variant="outline" className="flex-shrink-0">
