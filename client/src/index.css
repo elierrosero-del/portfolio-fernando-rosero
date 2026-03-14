@@ -43,52 +43,88 @@
 }
 
 :root {
-  /* Portfolio Design Tokens */
-  --navy-default: #060D1A;
-  --navy-mid: #0A1628;
-  --navy-panel: #0F1E38;
-  --gold-default: #C9A84C;
-  --gold-light: #E8C96A;
-  --cream: #F0EEE8;
-  --steel-default: #8A9AB5;
-  --steel-light: #B0C0D8;
-  --steel-dark: #3A4A60;
-  --border-color: #1E2E48;
+  /* Professional Portfolio Design Tokens */
+  /* Primary Color: Blue Slate (Professional & Modern) */
+  --primary-50: #F0F4F8;
+  --primary-100: #D9E2F0;
+  --primary-200: #B3C5E1;
+  --primary-300: #8DA8D2;
+  --primary-400: #678BC3;
+  --primary-500: #4A6FA8;
+  --primary-600: #3D5A8A;
+  --primary-700: #2E446B;
+  --primary-800: #1F2E4D;
+  --primary-900: #0F1A2E;
+
+  /* Background Colors */
+  --bg-dark: #0A0E1A;
+  --bg-darker: #050709;
+  --bg-card: #141B2D;
+  --bg-card-hover: #1A2340;
+
+  /* Text Colors */
+  --text-primary: #F5F7FA;
+  --text-secondary: #C5CED9;
+  --text-tertiary: #8B95A8;
+
+  /* Accent Colors */
+  --accent-blue: #4A6FA8;
+  --accent-teal: #2DD4BF;
+  --accent-emerald: #10B981;
+  --accent-amber: #F59E0B;
+
+  /* Neutral Colors */
+  --neutral-50: #F9FAFB;
+  --neutral-100: #F3F4F6;
+  --neutral-200: #E5E7EB;
+  --neutral-300: #D1D5DB;
+  --neutral-400: #9CA3AF;
+  --neutral-500: #6B7280;
+  --neutral-600: #4B5563;
+  --neutral-700: #374151;
+  --neutral-800: #1F2937;
+  --neutral-900: #111827;
+
+  /* Semantic Colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #4A6FA8;
 
   /* Tailwind Semantic Colors - Dark Theme */
-  --primary: var(--gold-default);
-  --primary-foreground: var(--navy-default);
-  --sidebar-primary: var(--gold-default);
-  --sidebar-primary-foreground: var(--navy-default);
-  --chart-1: var(--gold-light);
-  --chart-2: var(--gold-default);
-  --chart-3: var(--steel-light);
-  --chart-4: var(--steel-default);
-  --chart-5: var(--steel-dark);
-  --radius: 0.25rem;
-  --background: var(--navy-default);
-  --foreground: var(--cream);
-  --card: var(--navy-mid);
-  --card-foreground: var(--cream);
-  --popover: var(--navy-panel);
-  --popover-foreground: var(--cream);
-  --secondary: var(--navy-mid);
-  --secondary-foreground: var(--steel-light);
-  --muted: var(--navy-panel);
-  --muted-foreground: var(--steel-default);
-  --accent: var(--gold-default);
-  --accent-foreground: var(--navy-default);
-  --destructive: #EF4444;
-  --destructive-foreground: var(--cream);
-  --border: var(--border-color);
-  --input: rgba(255, 255, 255, 0.025);
-  --ring: var(--gold-default);
-  --sidebar: var(--navy-mid);
-  --sidebar-foreground: var(--cream);
-  --sidebar-accent: var(--gold-default);
-  --sidebar-accent-foreground: var(--navy-default);
-  --sidebar-border: var(--border-color);
-  --sidebar-ring: var(--gold-default);
+  --primary: var(--accent-blue);
+  --primary-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary-foreground: var(--text-primary);
+  --chart-1: var(--primary-500);
+  --chart-2: var(--accent-teal);
+  --chart-3: var(--accent-emerald);
+  --chart-4: var(--accent-amber);
+  --chart-5: var(--neutral-500);
+  --radius: 0.375rem;
+  --background: var(--bg-dark);
+  --foreground: var(--text-primary);
+  --card: var(--bg-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-card-hover);
+  --popover-foreground: var(--text-primary);
+  --secondary: var(--primary-700);
+  --secondary-foreground: var(--text-secondary);
+  --muted: var(--bg-card);
+  --muted-foreground: var(--text-tertiary);
+  --accent: var(--accent-blue);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--error);
+  --destructive-foreground: var(--text-primary);
+  --border: var(--primary-800);
+  --input: rgba(74, 111, 168, 0.08);
+  --ring: var(--accent-blue);
+  --sidebar: var(--bg-card);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-accent: var(--accent-blue);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--primary-800);
+  --sidebar-ring: var(--accent-blue);
 }
 
 .dark {
@@ -146,26 +182,36 @@
 
   /* Portfolio custom utilities */
   .bg-grid-pattern {
-    background-image: linear-gradient(rgba(201, 168, 76, 0.035) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(201, 168, 76, 0.035) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(74, 111, 168, 0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(74, 111, 168, 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
-  .glow-gold-tr {
-    background-image: radial-gradient(ellipse 55% 45% at 80% 20%, rgba(201, 168, 76, 0.07), transparent);
+  .glow-primary-tr {
+    background-image: radial-gradient(ellipse 55% 45% at 80% 20%, rgba(74, 111, 168, 0.08), transparent);
   }
 
-  .glow-gold-bl {
-    background-image: radial-gradient(ellipse 55% 45% at 15% 85%, rgba(201, 168, 76, 0.06), transparent);
+  .glow-primary-bl {
+    background-image: radial-gradient(ellipse 55% 45% at 15% 85%, rgba(74, 111, 168, 0.06), transparent);
   }
 
-  .glow-gold-c {
-    background-image: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(201, 168, 76, 0.06), transparent);
+  .glow-primary-c {
+    background-image: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(74, 111, 168, 0.06), transparent);
+  }
+
+  .glow-accent-tr {
+    background-image: radial-gradient(ellipse 55% 45% at 80% 20%, rgba(45, 212, 191, 0.06), transparent);
+  }
+
+  .glow-accent-bl {
+    background-image: radial-gradient(ellipse 55% 45% at 15% 85%, rgba(45, 212, 191, 0.04), transparent);
   }
 
   .skill-fill {
-    background-image: linear-gradient(90deg, #C9A84C, #E8C96A);
+    background-image: linear-gradient(90deg, #4A6FA8, #2DD4BF);
   }
+
+
 }
 
 @layer utilities {
@@ -212,4 +258,6 @@
   .animate-fade-up {
     animation: fade-up 0.75s ease-out;
   }
+
+
 }

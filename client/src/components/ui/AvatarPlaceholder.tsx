@@ -22,18 +22,18 @@ export function AvatarPlaceholder({
       animate="animate"
       transition={avatarFloatTransition}
       className={cn(
-        'relative w-full max-w-xs mx-auto aspect-[3/5] rounded border-2 border-dashed border-gold-default bg-gradient-to-br from-navy-mid to-navy-panel overflow-hidden',
+        'relative w-full max-w-xs mx-auto aspect-[3/5] rounded-md border-2 border-dashed border-[#4A6FA8] bg-gradient-to-br from-[#1A2340] to-[#0F1A2E] overflow-hidden',
         className
       )}
     >
       {/* Background glow */}
-      <div className="absolute inset-0 glow-gold-c" />
+      <div className="absolute inset-0 glow-primary-c" />
 
       {/* Placeholder figure */}
       <div className="absolute inset-0 flex items-center justify-center">
         <svg
           viewBox="0 0 200 300"
-          className="w-3/4 h-3/4 text-gold-default/30"
+          className="w-3/4 h-3/4 text-[#4A6FA8]/30"
           fill="currentColor"
         >
           {/* Head */}
@@ -49,7 +49,7 @@ export function AvatarPlaceholder({
       {/* Scan line animation */}
       {showScan && (
         <motion.div
-          className="absolute inset-x-0 h-1 bg-gradient-to-b from-gold-default/0 via-gold-default/50 to-gold-default/0 animate-scan"
+          className="absolute inset-x-0 h-1 bg-gradient-to-b from-[#4A6FA8]/0 via-[#4A6FA8]/50 to-[#4A6FA8]/0 animate-scan"
           initial={{ top: '0%' }}
           animate={{ top: '100%' }}
           transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
@@ -57,7 +57,7 @@ export function AvatarPlaceholder({
       )}
 
       {/* Border glow */}
-      <div className="absolute inset-0 rounded border-2 border-gold-default/20 pointer-events-none" />
+      <div className="absolute inset-0 rounded-md border-2 border-[#4A6FA8]/20 pointer-events-none" />
     </motion.div>
   );
 }

@@ -31,15 +31,15 @@ export function SectionHeader({
       className={cn('text-center mb-12', className)}
     >
       {eyebrow && (
-        <p className="text-sm font-mono text-gold-default mb-2 uppercase tracking-wider">
+        <p className="text-sm font-mono text-[#4A6FA8] mb-2 uppercase tracking-wider">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-4xl md:text-5xl font-display font-bold text-cream mb-4 leading-tight">
+      <h2 className="text-4xl md:text-5xl font-display font-bold text-[#F5F7FA] mb-4 leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-steel-light max-w-2xl mx-auto mb-6">
+        <p className="text-lg text-[#8B95A8] max-w-2xl mx-auto mb-6">
           {description}
         </p>
       )}

@@ -21,10 +21,10 @@ export function SkillBar({ name, level, className }: SkillBarProps) {
   return (
     <div ref={ref} className={cn('mb-6', className)}>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium text-cream">{name}</span>
-        <span className="text-xs font-mono text-gold-default">{level}%</span>
+        <span className="text-sm font-medium text-[#F5F7FA]">{name}</span>
+        <span className="text-xs font-mono text-[#4A6FA8]">{level}%</span>
       </div>
-      <div className="h-2 bg-navy-panel rounded-full overflow-hidden border border-steel-dark">
+      <div className="h-2 bg-[#141B2D] rounded-full overflow-hidden border border-[#1F2E4D]">
         <motion.div
           variants={skillBarFill(level)}
           initial="hidden"

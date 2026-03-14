@@ -26,10 +26,10 @@ export function TimelineItem({
       variants={scaleOnHover}
       whileHover="whileHover"
       className={cn(
-        'relative p-6 rounded border transition-all duration-300',
+        'relative p-6 rounded-md border transition-all duration-300',
         isActive
-          ? 'border-gold-default bg-navy-panel/50 shadow-lg shadow-gold-default/20'
-          : 'border-steel-dark bg-navy-mid/30 hover:border-steel-light',
+          ? 'border-[#4A6FA8] bg-[#1A2340] shadow-lg shadow-[#4A6FA8]/20'
+          : 'border-[#1F2E4D] bg-[#0F1A2E]/50 hover:border-[#3D5A8A]',
         className
       )}
     >
@@ -38,8 +38,8 @@ export function TimelineItem({
         className={cn(
           'absolute w-3 h-3 rounded-full -translate-x-[calc(100%+12px)] top-8',
           isActive
-            ? 'bg-gold-default shadow-lg shadow-gold-default/50'
-            : 'border-2 border-steel-dark bg-navy-default'
+            ? 'bg-[#4A6FA8] shadow-lg shadow-[#4A6FA8]/50'
+            : 'border-2 border-[#1F2E4D] bg-[#0A0E1A]'
         )}
       />
 
@@ -47,20 +47,20 @@ export function TimelineItem({
       <div className="space-y-2">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h4 className="text-lg font-semibold text-cream">{item.title}</h4>
-            <p className="text-sm text-steel-light">{item.institution}</p>
+            <h4 className="text-lg font-semibold text-[#F5F7FA]">{item.title}</h4>
+            <p className="text-sm text-[#8B95A8]">{item.institution}</p>
           </div>
-          <span className="text-xs font-mono text-gold-default whitespace-nowrap">
+          <span className="text-xs font-mono text-[#4A6FA8] whitespace-nowrap">
             {item.period}
           </span>
         </div>
-        <p className="text-sm text-steel-light leading-relaxed">
+        <p className="text-sm text-[#8B95A8] leading-relaxed">
           {item.description}
         </p>
         {item.isActive && (
           <div className="inline-flex items-center gap-2 mt-3">
-            <span className="w-2 h-2 bg-gold-default rounded-full animate-pulse-dot" />
-            <span className="text-xs font-mono text-gold-default">Actual</span>
+            <span className="w-2 h-2 bg-[#4A6FA8] rounded-full animate-pulse-dot" />
+            <span className="text-xs font-mono text-[#4A6FA8]">Actual</span>
           </div>
         )}
       </div>

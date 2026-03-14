@@ -5,7 +5,7 @@ import { type ReactNode } from 'react';
 
 export interface BadgeProps {
   children: ReactNode;
-  variant?: 'default' | 'gold' | 'outline';
+  variant?: 'default' | 'primary' | 'outline' | 'gold';
   className?: string;
   icon?: ReactNode;
 }
@@ -22,17 +22,19 @@ export function PortfolioBadge({
   return (
     <div
       className={cn(
-        'inline-flex items-center gap-2 px-3 py-1.5 rounded text-sm font-medium transition-colors',
+        'inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
         variant === 'default' &&
-          'bg-navy-panel text-cream border border-steel-dark',
-        variant === 'gold' &&
-          'bg-gold-default text-navy-default border border-gold-light',
+          'bg-[#141B2D] text-[#C5CED9] border border-[#1F2E4D]',
+        variant === 'primary' &&
+          'bg-[#4A6FA8] text-[#F5F7FA] border border-[#3D5A8A] shadow-sm',
         variant === 'outline' &&
-          'bg-transparent text-gold-default border border-gold-default',
+          'bg-transparent text-[#4A6FA8] border border-[#4A6FA8] hover:bg-[#0F1A2E]/30',
+        variant === 'gold' &&
+          'bg-[#F59E0B] text-[#111827] border border-[#F59E0B] shadow-sm',
         className
       )}
     >
-      {icon && <span className="flex-shrink-0">{icon}</span>}
+      {icon && <span className="flex-shrink-0 text-base">{icon}</span>}
       {children}
     </div>
   );

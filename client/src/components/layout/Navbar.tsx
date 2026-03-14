@@ -37,7 +37,7 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-navy-default/80 backdrop-blur-md border-b border-steel-dark/30'
+          ? 'bg-[#0A0E1A]/80 backdrop-blur-md border-b border-[#1F2E4D]/30'
           : 'bg-transparent'
       )}
     >
@@ -45,7 +45,7 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="text-xl font-bold font-display text-gold-default hover:text-gold-light transition-colors"
+          className="text-xl font-bold font-display text-[#4A6FA8] hover:text-[#3D5A8A] transition-colors"
         >
           FR
         </a>
@@ -59,8 +59,8 @@ export function Navbar() {
               className={cn(
                 'text-sm font-medium transition-colors duration-200',
                 activeSection === link.href.slice(1)
-                  ? 'text-gold-default'
-                  : 'text-cream hover:text-gold-light'
+                  ? 'text-[#4A6FA8]'
+                  : 'text-[#F5F7FA] hover:text-[#2DD4BF]'
               )}
             >
               {link.label}
@@ -70,7 +70,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="secondary">
             Descargar CV
           </Button>
         </div>
@@ -78,7 +78,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-cream hover:text-gold-default transition-colors"
+          className="md:hidden p-2 text-[#F5F7FA] hover:text-[#4A6FA8] transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,7 +93,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-navy-mid border-b border-steel-dark/30"
+            className="md:hidden bg-[#141B2D] border-b border-[#1F2E4D]/30"
           >
             <div className="container py-4 space-y-3">
               {NAV_LINKS.map((link) => (
@@ -104,15 +104,15 @@ export function Navbar() {
                   className={cn(
                     'block text-sm font-medium py-2 transition-colors',
                     activeSection === link.href.slice(1)
-                      ? 'text-gold-default'
-                      : 'text-cream hover:text-gold-light'
+                      ? 'text-[#4A6FA8]'
+                      : 'text-[#F5F7FA] hover:text-[#2DD4BF]'
                   )}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="pt-3 border-t border-steel-dark/30">
-                <Button size="sm" variant="outline" className="w-full">
+              <div className="pt-3 border-t border-[#1F2E4D]/30">
+                <Button size="sm" variant="secondary" className="w-full">
                   Descargar CV
                 </Button>
               </div>
@@ -124,11 +124,11 @@ export function Navbar() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-cream hover:text-gold-default transition-colors"
+                    className="p-2 text-[#F5F7FA] hover:text-[#4A6FA8] transition-colors"
                     aria-label={social.name}
                   >
                     {/* Icon placeholder */}
-                    <div className="w-5 h-5 bg-gold-default/20 rounded" />
+                    <div className="w-5 h-5 bg-[#4A6FA8]/20 rounded" />
                   </a>
                 ))}
               </div>

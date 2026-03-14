@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 /**
- * Custom cursor component with gold accent
+ * Custom cursor component with professional blue accent
  */
 export function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +30,7 @@ export function CustomCursor() {
     <>
       {/* Outer ring */}
       <motion.div
-        className="fixed w-8 h-8 border-2 border-gold-default rounded-full pointer-events-none z-[9999]"
+        className="fixed w-8 h-8 border-2 border-[#4A6FA8] rounded-full pointer-events-none z-[9999]"
         animate={{
           x: x - 16,
           y: y - 16,
@@ -44,7 +44,7 @@ export function CustomCursor() {
 
       {/* Inner dot */}
       <motion.div
-        className="fixed w-2 h-2 bg-gold-default rounded-full pointer-events-none z-[9999]"
+        className="fixed w-2 h-2 bg-[#4A6FA8] rounded-full pointer-events-none z-[9999]"
         animate={{
           x: x - 4,
           y: y - 4,
