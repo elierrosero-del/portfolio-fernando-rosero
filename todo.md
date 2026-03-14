@@ -92,3 +92,12 @@
 - [x] Revisar TestimonialCard en modo claro
 - [x] Revisar colores de badges y etiquetas
 - [x] Verificar accesibilidad WCAG AA en ambos modos
+
+
+## Ajustes de Diseño según Wireframe
+- [x] Actualizar Navbar con estados (normal y sticky)
+- [x] Mejorar Hero section layout (nombre grande, descripción, stats, avatar)
+- [x] Rediseñar About section con 2 columnas (bio + foto | skills)
+- [x] Actualizar Testimonios (featured grande + 3 cards en grid)
+- [x] Rediseñar Experience section con timeline mejorado
+- [x] Verificar responsividad en todos los breakpoints

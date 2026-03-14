@@ -10,13 +10,13 @@ import { Button } from '../ui/button';
 import { PortfolioBadge } from '../ui/PortfolioBadge';
 
 /**
- * Hero section component
+ * Hero section component with improved layout
  */
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-20 relative overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40" />
@@ -28,13 +28,18 @@ export function HeroSection() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center"
         >
           {/* Left Column - Text Content */}
-          <motion.div variants={fadeUp} className="space-y-6">
+          <motion.div variants={fadeUp} className="space-y-8">
+            {/* Availability Badge */}
+            <PortfolioBadge variant="primary" className="w-fit">
+              ● Disponible para proyectos
+            </PortfolioBadge>
+
             {/* Name */}
             <div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-display font-bold leading-tight">
+              <motion.h1 variants={fadeUp} className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight">
                 <span className="dark:text-[#F5F7FA] light:text-[#0F1A2E]">Fernando</span>
                 <br />
                 <span className="dark:text-[#F59E0B] light:text-[#D97706]">Rosero</span>
@@ -42,81 +47,66 @@ export function HeroSection() {
             </div>
 
             {/* Title */}
-            <motion.p variants={fadeUp} className="text-lg md:text-xl dark:text-[#C5CED9] light:text-[#4B5563]">
+            <motion.p variants={fadeUp} className="text-lg md:text-xl dark:text-[#C5CED9] light:text-[#4B5563] max-w-lg">
               {personalData.title}
             </motion.p>
 
-            {/* Stats */}
-            <motion.div variants={fadeUp} className="flex gap-6 flex-wrap">
-              {personalData.stats.map((stat, idx) => (
-                <div key={idx} className="flex items-center gap-3 dark:border-r-[#1F2E4D] light:border-r-[#D1D5DB] border-r pr-6 last:border-r-0 last:pr-0">
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold dark:text-[#F59E0B] light:text-[#D97706]">
-                      {stat.value}
-                    </p>
-                    <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+            {/* Description */}
+            <motion.p variants={fadeUp} className="text-base dark:text-[#8B95A8] light:text-[#6B7280] leading-relaxed max-w-lg">
+              Especialista en desarrollo de software con experiencia en contabilidad y finanzas. Transformo ideas complejas en soluciones elegantes y funcionales.
+            </motion.p>
 
-            {/* Availability Badge */}
-            <motion.div variants={fadeUp}>
-              <PortfolioBadge variant="gold" icon={<div className="w-2 h-2 bg-navy-default rounded-full animate-pulse-dot" />}>
-                Disponible para proyectos
-              </PortfolioBadge>
-            </motion.div>
-
-            {/* CV Download Bar */}
-            <motion.div
-              variants={fadeUp}
-              className="p-4 dark:bg-[#0F1A2E]/50 light:bg-[#F3F4F6] dark:border-[#1F2E4D] light:border-[#D1D5DB] border rounded flex items-center justify-between dark:hover:border-[#F59E0B] light:hover:border-[#D97706] transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 dark:bg-[#F59E0B]/20 light:bg-[#D97706]/20 rounded flex items-center justify-center">
-                  <FileText size={20} className="dark:text-[#F59E0B] light:text-[#D97706]" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium dark:text-[#F5F7FA] light:text-[#0F1A2E]">fernando-rosero-cv.pdf</p>
-                  <p className="text-xs dark:text-[#C5CED9] light:text-[#4B5563]">Currículum Vitae</p>
-                </div>
-              </div>
-              <Button size="sm" variant="outline" className="flex-shrink-0">
-                <Download size={16} className="mr-2" />
-                Descargar
-              </Button>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div variants={fadeUp} className="flex gap-4 pt-4">
-              <Button size="lg">
+            {/* CTAs */}
+            <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
+              <Button size="lg" variant="primary">
                 Ver Proyectos
               </Button>
-              <Button size="lg" variant="outline">
-                Contactar
+              <Button size="lg" variant="outline" className="gap-2">
+                <Download size={18} />
+                Descargar CV
               </Button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div variants={fadeUp} className="flex gap-8 flex-wrap pt-4">
+              {personalData.stats.map((stat, idx) => (
+                <div key={idx} className="flex flex-col">
+                  <p className="text-3xl md:text-4xl font-bold dark:text-[#F59E0B] light:text-[#D97706]">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs dark:text-[#8B95A8] light:text-[#6B7280] font-medium">{stat.label}</p>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
 
           {/* Right Column - Avatar */}
-          <motion.div variants={fadeUp} className="hidden md:block">
+          <motion.div
+            variants={fadeUp}
+            className="flex justify-center md:justify-end"
+          >
             <AvatarPlaceholder />
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* CV Preview Bar */}
         <motion.div
           variants={fadeUp}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="mt-16 md:mt-20 p-4 md:p-6 dark:bg-[#0F1A2E]/50 light:bg-[#F9FAFB] border dark:border-[#1F2E4D] light:border-[#E5E7EB] rounded-lg flex items-center gap-4 flex-wrap"
         >
-          <p className="text-xs font-mono text-steel-light">Desplázate</p>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-gold-default rounded-full flex items-start justify-center pt-2"
-          >
-            <motion.div className="w-1 h-2 bg-gold-default rounded-full" />
-          </motion.div>
+          <div className="flex items-center gap-3 flex-1 min-w-[200px]">
+            <FileText size={24} className="dark:text-[#4A6FA8] light:text-[#4A6FA8]" />
+            <div>
+              <p className="text-sm font-semibold dark:text-[#F5F7FA] light:text-[#0F1A2E]">
+                fernando-rosero-cv.pdf
+              </p>
+              <p className="text-xs dark:text-[#8B95A8] light:text-[#6B7280]">Curriculum Vitae</p>
+            </div>
+          </div>
+          <Button size="sm" variant="primary">
+            <Download size={16} className="mr-2" />
+            Descargar
+          </Button>
         </motion.div>
       </div>
     </section>

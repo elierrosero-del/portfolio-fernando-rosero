@@ -11,10 +11,10 @@ import { SectionHeader } from '../ui/SectionHeader';
 import { TimelineItem } from '../ui/TimelineItem';
 
 /**
- * Experience section component
+ * Experience section component with improved timeline
  */
 export function ExperienceSection() {
-  const [filter, setFilter] = useState<'all' | 'academic' | 'professional'>('all');
+  const [filter, setFilter] = useState<'all' | 'academic' | 'professional'>('academic');
 
   const academicExperience = getExperienceByType('academic');
   const professionalExperience = getExperienceByType('professional');
@@ -37,11 +37,44 @@ export function ExperienceSection() {
       <div className="absolute bottom-0 right-0 w-1/2 h-1/2 glow-gold-tr pointer-events-none" />
 
       <div className="container relative z-10">
-        <SectionHeader
-          eyebrow="Mi Recorrido"
-          title="Experiencia"
-          description="Educación y experiencia profesional acumulada"
-        />
+        {/* Section Header */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+        >
+          <div>
+            <p className="text-xs font-semibold dark:text-[#8B95A8] light:text-[#6B7280] tracking-widest uppercase mb-4">
+              Trayectoria
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold dark:text-[#F5F7FA] light:text-[#0F1A2E] leading-tight">
+              Experiencia & Formación
+            </h2>
+          </div>
+
+          {/* Filter Tabs */}
+          <motion.div variants={fadeUp} className="flex gap-0 border dark:border-[#1F2E4D] light:border-[#D1D5DB] rounded overflow-hidden">
+            {[
+              { label: 'Académica', value: 'academic' as const },
+              { label: 'Laboral', value: 'professional' as const },
+              { label: 'Todos', value: 'all' as const },
+            ].map((tab) => (
+              <button
+                key={tab.value}
+                onClick={() => setFilter(tab.value)}
+                className={`px-5 py-2 text-xs font-semibold transition-all duration-300 ${
+                  filter === tab.value
+                    ? 'dark:bg-[#0F1A2E] dark:text-white light:bg-[#0F1A2E] light:text-white'
+                    : 'dark:bg-transparent dark:text-[#C5CED9] light:bg-transparent light:text-[#4B5563] dark:hover:text-[#F5F7FA] light:hover:text-[#0F1A2E]'
+                } ${tab.value !== 'all' ? 'dark:border-r dark:border-[#1F2E4D] light:border-r light:border-[#D1D5DB]' : ''}`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </motion.div>
+        </motion.div>
 
         <motion.div
           variants={staggerContainer}
@@ -50,59 +83,49 @@ export function ExperienceSection() {
           viewport={{ once: true, margin: '-100px' }}
           className="space-y-8"
         >
-          {/* Filter Tabs */}
-          <motion.div variants={fadeUp} className="flex gap-3 justify-center flex-wrap">
-            {[
-              { label: 'Todos', value: 'all' as const },
-              { label: 'Académica', value: 'academic' as const },
-              { label: 'Profesional', value: 'professional' as const },
-            ].map((tab) => (
-              <button
-                key={tab.value}
-                onClick={() => setFilter(tab.value)}
-                className={`px-4 py-2 rounded text-sm font-medium transition-all duration-300 ${
-                  filter === tab.value
-                    ? 'bg-gold-default text-navy-default'
-                    : 'bg-navy-panel text-cream hover:border-gold-default border border-steel-dark'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </motion.div>
-
           {/* Timeline */}
-          <motion.div
-            variants={staggerContainer}
-            className="space-y-6 md:space-y-8"
-          >
+          <div className="space-y-6 md:space-y-8">
             {displayedExperience.map((item, idx) => (
               <motion.div
                 key={item.id}
                 variants={fadeUp}
-                className="md:flex md:gap-8"
+                className="grid grid-cols-1 md:grid-cols-[1fr_40px_1fr] gap-0 md:gap-6"
               >
-                {/* Timeline line and dot (desktop) */}
-                <div className="hidden md:flex flex-col items-center w-20 flex-shrink-0">
-                  <div
-                    className={`w-4 h-4 rounded-full border-2 ${
-                      item.isActive
-                        ? 'bg-gold-default border-gold-default shadow-lg shadow-gold-default/50'
-                        : 'border-steel-dark bg-navy-default'
-                    }`}
-                  />
-                  {idx !== displayedExperience.length - 1 && (
-                    <div className="w-1 flex-grow bg-gradient-to-b from-gold-default to-transparent mt-4 mb-4" />
+                {/* Left side (alternates) */}
+                <div className={`${idx % 2 === 0 ? 'md:text-right' : 'md:col-start-3'}`}>
+                  {idx % 2 === 0 && (
+                    <TimelineItem item={item} isActive={item.isActive} position="left" />
                   )}
                 </div>
 
-                {/* Content */}
-                <div className="flex-grow md:mt-0">
-                  <TimelineItem item={item} isActive={item.isActive} />
+                {/* Center dot and line */}
+                <div className="hidden md:flex flex-col items-center">
+                  <div
+                    className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${
+                      item.isActive
+                        ? 'dark:bg-[#4A6FA8] light:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50'
+                        : 'dark:border-2 dark:border-[#1F2E4D] dark:bg-[#0A0E1A] light:border-2 light:border-[#D1D5DB] light:bg-white'
+                    }`}
+                  />
+                  {idx !== displayedExperience.length - 1 && (
+                    <div className="w-0.5 flex-grow dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:to-transparent mt-4 mb-4" />
+                  )}
+                </div>
+
+                {/* Right side (alternates) */}
+                <div className={`${idx % 2 !== 0 ? 'md:col-start-1' : ''}`}>
+                  {idx % 2 !== 0 && (
+                    <TimelineItem item={item} isActive={item.isActive} position="right" />
+                  )}
+                </div>
+
+                {/* Mobile version */}
+                <div className="md:hidden col-span-1">
+                  <TimelineItem item={item} isActive={item.isActive} position="left" />
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
