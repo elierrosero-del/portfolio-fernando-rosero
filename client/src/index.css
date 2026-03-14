@@ -139,10 +139,10 @@
   --bg-card: #F3F4F6;
   --bg-card-hover: #E5E7EB;
 
-  /* Text Colors - Light */
-  --text-primary: #111827;
-  --text-secondary: #374151;
-  --text-tertiary: #6B7280;
+  /* Text Colors - Light (Enhanced Contrast) */
+  --text-primary: #0F1A2E;
+  --text-secondary: #1F2937;
+  --text-tertiary: #4B5563;
 
   /* Tailwind Semantic Colors - Light Theme */
   --primary: var(--accent-blue);
@@ -161,9 +161,9 @@
   --popover: var(--bg-card-hover);
   --popover-foreground: var(--text-primary);
   --secondary: var(--primary-100);
-  --secondary-foreground: var(--text-secondary);
+  --secondary-foreground: #0F1A2E;
   --muted: var(--bg-card);
-  --muted-foreground: var(--text-tertiary);
+  --muted-foreground: #4B5563;
   --accent: var(--accent-blue);
   --accent-foreground: #FFFFFF;
   --destructive: var(--error);

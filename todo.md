@@ -85,3 +85,10 @@
 - [x] Actualizar App.tsx con ThemeProvider
 - [x] Verificar persistencia en localStorage
 - [x] Probar transiciones de tema
+
+## Mejoras de Contraste (Light Mode)
+- [x] Aumentar contraste de textos en modo claro
+- [x] Ajustar colores de secciones para mejor legibilidad
+- [x] Revisar TestimonialCard en modo claro
+- [x] Revisar colores de badges y etiquetas
+- [x] Verificar accesibilidad WCAG AA en ambos modos
