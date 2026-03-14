@@ -139,6 +139,12 @@
   --bg-card: #F3F4F6;
   --bg-card-hover: #E5E7EB;
 
+  /* Accent Colors - Light (Enhanced Visibility) */
+  --accent-blue: #2E446B;
+  --accent-teal: #0D9488;
+  --accent-emerald: #059669;
+  --accent-amber: #D97706;
+
   /* Text Colors - Light (Enhanced Contrast) */
   --text-primary: #0F1A2E;
   --text-secondary: #1F2937;
@@ -149,7 +155,7 @@
   --primary-foreground: #FFFFFF;
   --sidebar-primary: var(--accent-blue);
   --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: var(--primary-500);
+  --chart-1: var(--accent-blue);
   --chart-2: var(--accent-teal);
   --chart-3: var(--accent-emerald);
   --chart-4: var(--accent-amber);
@@ -160,22 +166,22 @@
   --card-foreground: var(--text-primary);
   --popover: var(--bg-card-hover);
   --popover-foreground: var(--text-primary);
-  --secondary: var(--primary-100);
+  --secondary: #E5E7EB;
   --secondary-foreground: #0F1A2E;
   --muted: var(--bg-card);
   --muted-foreground: #4B5563;
-  --accent: var(--accent-blue);
+  --accent: var(--accent-amber);
   --accent-foreground: #FFFFFF;
-  --destructive: var(--error);
+  --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: var(--primary-200);
-  --input: rgba(74, 111, 168, 0.08);
+  --border: #D1D5DB;
+  --input: rgba(45, 212, 191, 0.08);
   --ring: var(--accent-blue);
   --sidebar: var(--bg-card);
   --sidebar-foreground: var(--text-primary);
   --sidebar-accent: var(--accent-blue);
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: var(--primary-200);
+  --sidebar-border: #D1D5DB;
   --sidebar-ring: var(--accent-blue);
 }
 

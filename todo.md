@@ -101,3 +101,10 @@
 - [x] Actualizar Testimonios (featured grande + 3 cards en grid)
 - [x] Rediseñar Experience section con timeline mejorado
 - [x] Verificar responsividad en todos los breakpoints
+
+
+## Corrección de Colores Naranjas en Modo Claro
+- [x] Revisar visibilidad de colores naranjas/dorados en modo claro
+- [x] Actualizar paleta de colores en index.css
+- [x] Ajustar componentes que usan colores naranjas
+- [x] Verificar contraste en todas las secciones

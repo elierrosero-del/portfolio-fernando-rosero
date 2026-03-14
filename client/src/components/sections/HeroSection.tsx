@@ -42,7 +42,7 @@ export function HeroSection() {
               <motion.h1 variants={fadeUp} className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight">
                 <span className="dark:text-[#F5F7FA] light:text-[#0F1A2E]">Fernando</span>
                 <br />
-                <span className="dark:text-[#F59E0B] light:text-[#D97706]">Rosero</span>
+                <span className="dark:text-[#F59E0B] light:text-[#B45309]">Rosero</span>
               </motion.h1>
             </div>
 
@@ -71,7 +71,7 @@ export function HeroSection() {
             <motion.div variants={fadeUp} className="flex gap-8 flex-wrap pt-4">
               {personalData.stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <p className="text-3xl md:text-4xl font-bold dark:text-[#F59E0B] light:text-[#D97706]">
+                  <p className="text-3xl md:text-4xl font-bold dark:text-[#F59E0B] light:text-[#B45309]">
                     {stat.value}
                   </p>
                   <p className="text-xs dark:text-[#8B95A8] light:text-[#6B7280] font-medium">{stat.label}</p>
