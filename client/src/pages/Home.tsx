@@ -1,31 +1,35 @@
-import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { getLoginUrl } from "@/const";
-import { Streamdown } from 'streamdown';
+import { CustomCursor } from '@/components/layout/CustomCursor';
+import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar';
+import { AboutSection } from '@/components/sections/AboutSection';
+import { ContactSection } from '@/components/sections/ContactSection';
+import { ExperienceSection } from '@/components/sections/ExperienceSection';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
+ * Home page - Main portfolio page
  */
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-navy-default text-cream">
+      {/* Custom Cursor */}
+      <CustomCursor />
+
+      {/* Navigation */}
+      <Navbar />
+
+      {/* Main Content */}
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <ExperienceSection />
+        <ContactSection />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
