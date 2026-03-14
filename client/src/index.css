@@ -42,8 +42,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ============================================================
+   DARK THEME (Default)
+   ============================================================ */
 :root {
-  /* Professional Portfolio Design Tokens */
   /* Primary Color: Blue Slate (Professional & Modern) */
   --primary-50: #F0F4F8;
   --primary-100: #D9E2F0;
@@ -56,13 +58,13 @@
   --primary-800: #1F2E4D;
   --primary-900: #0F1A2E;
 
-  /* Background Colors */
+  /* Background Colors - Dark */
   --bg-dark: #0A0E1A;
   --bg-darker: #050709;
   --bg-card: #141B2D;
   --bg-card-hover: #1A2340;
 
-  /* Text Colors */
+  /* Text Colors - Dark */
   --text-primary: #F5F7FA;
   --text-secondary: #C5CED9;
   --text-tertiary: #8B95A8;
@@ -127,6 +129,56 @@
   --sidebar-ring: var(--accent-blue);
 }
 
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+.light {
+  /* Background Colors - Light */
+  --bg-dark: #FFFFFF;
+  --bg-darker: #F9FAFB;
+  --bg-card: #F3F4F6;
+  --bg-card-hover: #E5E7EB;
+
+  /* Text Colors - Light */
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6B7280;
+
+  /* Tailwind Semantic Colors - Light Theme */
+  --primary: var(--accent-blue);
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: var(--primary-500);
+  --chart-2: var(--accent-teal);
+  --chart-3: var(--accent-emerald);
+  --chart-4: var(--accent-amber);
+  --chart-5: var(--neutral-500);
+  --background: var(--bg-dark);
+  --foreground: var(--text-primary);
+  --card: var(--bg-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-card-hover);
+  --popover-foreground: var(--text-primary);
+  --secondary: var(--primary-100);
+  --secondary-foreground: var(--text-secondary);
+  --muted: var(--bg-card);
+  --muted-foreground: var(--text-tertiary);
+  --accent: var(--accent-blue);
+  --accent-foreground: #FFFFFF;
+  --destructive: var(--error);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--primary-200);
+  --input: rgba(74, 111, 168, 0.08);
+  --ring: var(--accent-blue);
+  --sidebar: var(--bg-card);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-accent: var(--accent-blue);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: var(--primary-200);
+  --sidebar-ring: var(--accent-blue);
+}
+
 .dark {
   /* Dark theme is default for portfolio */
 }
@@ -136,7 +188,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -210,8 +262,6 @@
   .skill-fill {
     background-image: linear-gradient(90deg, #4A6FA8, #2DD4BF);
   }
-
-
 }
 
 @layer utilities {
@@ -258,6 +308,4 @@
   .animate-fade-up {
     animation: fade-up 0.75s ease-out;
   }
-
-
 }

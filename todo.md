@@ -75,3 +75,13 @@
 - [ ] Verificar animaciones y performance
 - [ ] Verificar accesibilidad (a11y)
 - [ ] Crear checkpoint final
+
+## Tema Claro/Oscuro (Light/Dark Mode)
+- [x] Diseñar paleta de colores para modo claro
+- [x] Actualizar index.css con variables de tema
+- [x] Crear lib/hooks/useTheme.ts
+- [x] Crear lib/contexts/ThemeContext.tsx
+- [x] Agregar toggle de tema en Navbar
+- [x] Actualizar App.tsx con ThemeProvider
+- [x] Verificar persistencia en localStorage
+- [x] Probar transiciones de tema
