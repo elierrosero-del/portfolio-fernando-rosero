@@ -12,7 +12,7 @@ export const buttonVariants = (options?: { size?: string; variant?: string }) =>
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'accent';
   size?: 'sm' | 'md' | 'lg' | 'icon' | 'default';
   children?: ReactNode;
 }
@@ -50,6 +50,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
           'text-foreground hover:bg-muted active:bg-muted/80 dark:text-text-primary dark:hover:bg-bg-card-hover dark:active:bg-primary-800',
         variant === 'outline' &&
           'border border-primary text-primary hover:bg-primary/10 active:bg-primary/20 dark:border-accent-blue dark:text-accent-blue dark:hover:bg-primary-900/50 dark:active:bg-primary-800',
+        variant === 'accent' &&
+          'bg-accent text-accent-foreground hover:bg-accent/90 active:bg-accent/80 shadow-sm hover:shadow-md dark:bg-[#F59E0B] dark:hover:bg-[#F59E0B]/90 dark:active:bg-[#F59E0B]/80 dark:text-[#0F1A2E]',
         className
       )}
       {...props}

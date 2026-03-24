@@ -58,7 +58,7 @@ export function HeroSection() {
 
             {/* CTAs */}
             <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
-              <Button size="lg" variant="primary">
+              <Button size="lg" variant="accent">
                 Ver Proyectos
               </Button>
               <Button size="lg" variant="outline" className="gap-2">
