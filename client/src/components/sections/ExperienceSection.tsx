@@ -14,7 +14,7 @@ import { TimelineItem } from '../ui/TimelineItem';
  * Experience section component with improved timeline
  */
 export function ExperienceSection() {
-  const [filter, setFilter] = useState<'all' | 'academic' | 'professional'>('academic');
+  const [filter, setFilter] = useState<'all' | 'academic' | 'professional'>('all');
 
   const academicExperience = getExperienceByType('academic');
   const professionalExperience = getExperienceByType('professional');
@@ -85,46 +85,52 @@ export function ExperienceSection() {
         >
           {/* Timeline */}
           <div className="space-y-6 md:space-y-8">
-            {displayedExperience.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                variants={fadeUp}
-                className="grid grid-cols-1 md:grid-cols-[1fr_40px_1fr] gap-0 md:gap-6"
-              >
-                {/* Left side (alternates) */}
-                <div className={`${idx % 2 === 0 ? 'md:text-right' : 'md:col-start-3'}`}>
-                  {idx % 2 === 0 && (
+            {displayedExperience.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-lg dark:text-[#8B95A8] light:text-[#6B7280]">No hay experiencia para mostrar</p>
+              </div>
+            ) : (
+              displayedExperience.map((item, idx) => (
+                <motion.div
+                  key={item.id}
+                  variants={fadeUp}
+                  className="grid grid-cols-1 md:grid-cols-[1fr_40px_1fr] gap-0 md:gap-6"
+                >
+                  {/* Left side (alternates) */}
+                  <div className={`${idx % 2 === 0 ? 'md:text-right' : 'md:col-start-3'}`}>
+                    {idx % 2 === 0 && (
+                      <TimelineItem item={item} isActive={item.isActive} position="left" />
+                    )}
+                  </div>
+
+                  {/* Center dot and line */}
+                  <div className="hidden md:flex flex-col items-center">
+                    <div
+                      className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${
+                        item.isActive
+                          ? 'dark:bg-[#4A6FA8] light:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50'
+                          : 'dark:border-2 dark:border-[#1F2E4D] dark:bg-[#0A0E1A] light:border-2 light:border-[#D1D5DB] light:bg-white'
+                      }`}
+                    />
+                    {idx !== displayedExperience.length - 1 && (
+                      <div className="w-0.5 flex-grow dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:to-transparent mt-4 mb-4" />
+                    )}
+                  </div>
+
+                  {/* Right side (alternates) */}
+                  <div className={`${idx % 2 !== 0 ? 'md:col-start-1' : ''}`}>
+                    {idx % 2 !== 0 && (
+                      <TimelineItem item={item} isActive={item.isActive} position="right" />
+                    )}
+                  </div>
+
+                  {/* Mobile version */}
+                  <div className="md:hidden col-span-1">
                     <TimelineItem item={item} isActive={item.isActive} position="left" />
-                  )}
-                </div>
-
-                {/* Center dot and line */}
-                <div className="hidden md:flex flex-col items-center">
-                  <div
-                    className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${
-                      item.isActive
-                        ? 'dark:bg-[#4A6FA8] light:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50'
-                        : 'dark:border-2 dark:border-[#1F2E4D] dark:bg-[#0A0E1A] light:border-2 light:border-[#D1D5DB] light:bg-white'
-                    }`}
-                  />
-                  {idx !== displayedExperience.length - 1 && (
-                    <div className="w-0.5 flex-grow dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:to-transparent mt-4 mb-4" />
-                  )}
-                </div>
-
-                {/* Right side (alternates) */}
-                <div className={`${idx % 2 !== 0 ? 'md:col-start-1' : ''}`}>
-                  {idx % 2 !== 0 && (
-                    <TimelineItem item={item} isActive={item.isActive} position="right" />
-                  )}
-                </div>
-
-                {/* Mobile version */}
-                <div className="md:hidden col-span-1">
-                  <TimelineItem item={item} isActive={item.isActive} position="left" />
-                </div>
-              </motion.div>
-            ))}
+                  </div>
+                </motion.div>
+              ))
+            )}
           </div>
         </motion.div>
       </div>

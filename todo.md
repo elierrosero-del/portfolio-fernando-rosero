@@ -136,3 +136,10 @@
 - [x] Actualizar experiencia desarrollo software
 - [x] Crear sección de proyectos de desarrollo
 - [x] Verificar diseño y responsividad
+
+
+## Correcciones de Bugs
+- [x] Revisar y corregir sección de Experiencia que no carga
+- [x] Revisar y corregir sección Académica que no aparece
+- [x] Verificar datos en experience.ts y education.ts
+- [x] Verificar componentes ExperienceSection y EducationSection
