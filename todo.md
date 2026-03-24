@@ -152,3 +152,12 @@
 - [x] Crear componente ProjectsSection
 - [x] Integrar ProjectsSection en Home.tsx
 - [x] Verificar diseño y responsividad en ambos temas
+
+
+## Mejoras a la Sección de Experiencia
+- [x] Rediseñar layout de timeline para mejor claridad
+- [x] Mejorar visualización de filtros
+- [x] Arreglar alineación de items en la timeline
+- [x] Mejorar espaciado y contraste visual
+- [x] Verificar funcionamiento de filtros (Académica, Laboral, Todos)
+- [x] Probar responsividad en móvil

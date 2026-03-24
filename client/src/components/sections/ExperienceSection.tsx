@@ -30,7 +30,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-20 md:py-32 relative overflow-hidden dark:bg-[#141B2D] light:bg-[#F9FAFB]"
+      className="py-20 md:py-32 relative overflow-hidden dark:bg-[#0A0E1A] light:bg-white"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
@@ -43,89 +43,107 @@ export function ExperienceSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+          className="mb-16"
         >
-          <div>
-            <p className="text-xs font-semibold dark:text-[#8B95A8] light:text-[#6B7280] tracking-widest uppercase mb-4">
-              Trayectoria
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold dark:text-[#F5F7FA] light:text-[#0F1A2E] leading-tight">
-              Experiencia & Formación
-            </h2>
-          </div>
-
-          {/* Filter Tabs */}
-          <motion.div variants={fadeUp} className="flex gap-0 border dark:border-[#1F2E4D] light:border-[#D1D5DB] rounded overflow-hidden">
-            {[
-              { label: 'Académica', value: 'academic' as const },
-              { label: 'Laboral', value: 'professional' as const },
-              { label: 'Todos', value: 'all' as const },
-            ].map((tab) => (
-              <button
-                key={tab.value}
-                onClick={() => setFilter(tab.value)}
-                className={`px-5 py-2 text-xs font-semibold transition-all duration-300 ${
-                  filter === tab.value
-                    ? 'dark:bg-[#0F1A2E] dark:text-white light:bg-[#0F1A2E] light:text-white'
-                    : 'dark:bg-transparent dark:text-[#C5CED9] light:bg-transparent light:text-[#4B5563] dark:hover:text-[#F5F7FA] light:hover:text-[#0F1A2E]'
-                } ${tab.value !== 'all' ? 'dark:border-r dark:border-[#1F2E4D] light:border-r light:border-[#D1D5DB]' : ''}`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </motion.div>
+          <SectionHeader
+            title="Experiencia & Formación"
+            description="Mi recorrido profesional y académico"
+          />
         </motion.div>
 
+        {/* Filter Tabs */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          className="flex justify-center gap-3 mb-16 flex-wrap"
+        >
+          {[
+            { label: 'Todos', value: 'all' as const },
+            { label: 'Académica', value: 'academic' as const },
+            { label: 'Laboral', value: 'professional' as const },
+          ].map((tab) => (
+            <button
+              key={tab.value}
+              onClick={() => setFilter(tab.value)}
+              className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+                filter === tab.value
+                  ? 'dark:bg-[#4A6FA8] light:bg-[#4A6FA8] text-white shadow-lg dark:shadow-[#4A6FA8]/30'
+                  : 'dark:bg-[#141B2D] dark:text-[#C5CED9] dark:border dark:border-[#1F2E4D] light:bg-[#F3F4F6] light:text-[#4B5563] light:border light:border-[#D1D5DB] hover:dark:border-[#4A6FA8] hover:light:border-[#4A6FA8]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Timeline Container */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="space-y-8"
+          className="relative"
         >
-          {/* Timeline */}
-          <div className="space-y-6 md:space-y-8">
+          {/* Vertical line for desktop */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:via-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:via-[#4A6FA8] light:to-transparent" />
+
+          {/* Timeline Items */}
+          <div className="space-y-8 md:space-y-12">
             {displayedExperience.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-lg dark:text-[#8B95A8] light:text-[#6B7280]">No hay experiencia para mostrar</p>
-              </div>
+              <motion.div variants={fadeUp} className="text-center py-16">
+                <p className="text-lg dark:text-[#8B95A8] light:text-[#6B7280]">
+                  No hay experiencia para mostrar en esta categoría
+                </p>
+              </motion.div>
             ) : (
               displayedExperience.map((item, idx) => (
                 <motion.div
                   key={item.id}
                   variants={fadeUp}
-                  className="grid grid-cols-1 md:grid-cols-[1fr_40px_1fr] gap-0 md:gap-6"
+                  className="relative"
                 >
-                  {/* Left side (alternates) */}
-                  <div className={`${idx % 2 === 0 ? 'md:text-right' : 'md:col-start-3'}`}>
-                    {idx % 2 === 0 && (
-                      <TimelineItem item={item} isActive={item.isActive} position="left" />
-                    )}
+                  {/* Desktop layout - alternating sides */}
+                  <div className="hidden md:grid md:grid-cols-2 md:gap-8 md:items-start">
+                    {/* Left side content */}
+                    <div className={idx % 2 === 0 ? 'text-right pr-8' : 'invisible'}>
+                      {idx % 2 === 0 && (
+                        <TimelineItem item={item} isActive={item.isActive} position="left" />
+                      )}
+                    </div>
+
+                    {/* Center dot */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                      <div
+                        className={`w-4 h-4 rounded-full flex-shrink-0 ring-4 transition-all duration-300 ${
+                          item.isActive
+                            ? 'dark:bg-[#4A6FA8] dark:ring-[#4A6FA8]/30 light:bg-[#4A6FA8] light:ring-[#4A6FA8]/30'
+                            : 'dark:bg-[#141B2D] dark:ring-[#1F2E4D] light:bg-white light:ring-[#D1D5DB]'
+                        }`}
+                      />
+                    </div>
+
+                    {/* Right side content */}
+                    <div className={idx % 2 !== 0 ? 'pl-8' : 'invisible'}>
+                      {idx % 2 !== 0 && (
+                        <TimelineItem item={item} isActive={item.isActive} position="right" />
+                      )}
+                    </div>
                   </div>
 
-                  {/* Center dot and line */}
-                  <div className="hidden md:flex flex-col items-center">
+                  {/* Mobile layout - single column */}
+                  <div className="md:hidden pl-8 relative">
+                    {/* Vertical line for mobile */}
+                    <div className="absolute left-1.5 top-0 bottom-0 w-0.5 dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:to-transparent" />
+                    {/* Dot for mobile */}
                     <div
-                      className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${
+                      className={`absolute -left-1 top-2 w-4 h-4 rounded-full ring-4 transition-all duration-300 ${
                         item.isActive
-                          ? 'dark:bg-[#4A6FA8] light:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50'
-                          : 'dark:border-2 dark:border-[#1F2E4D] dark:bg-[#0A0E1A] light:border-2 light:border-[#D1D5DB] light:bg-white'
+                          ? 'dark:bg-[#4A6FA8] dark:ring-[#4A6FA8]/30 light:bg-[#4A6FA8] light:ring-[#4A6FA8]/30'
+                          : 'dark:bg-[#141B2D] dark:ring-[#1F2E4D] light:bg-white light:ring-[#D1D5DB]'
                       }`}
                     />
-                    {idx !== displayedExperience.length - 1 && (
-                      <div className="w-0.5 flex-grow dark:bg-gradient-to-b dark:from-[#4A6FA8] dark:to-transparent light:bg-gradient-to-b light:from-[#4A6FA8] light:to-transparent mt-4 mb-4" />
-                    )}
-                  </div>
-
-                  {/* Right side (alternates) */}
-                  <div className={`${idx % 2 !== 0 ? 'md:col-start-1' : ''}`}>
-                    {idx % 2 !== 0 && (
-                      <TimelineItem item={item} isActive={item.isActive} position="right" />
-                    )}
-                  </div>
-
-                  {/* Mobile version */}
-                  <div className="md:hidden col-span-1">
                     <TimelineItem item={item} isActive={item.isActive} position="left" />
                   </div>
                 </motion.div>
