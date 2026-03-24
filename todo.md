@@ -117,3 +117,12 @@
 - [x] Mejorar modo claro con contraste profesional
 - [x] Verificar responsividad mobile-first
 - [x] Optimizar animaciones y transiciones
+
+
+## Secci\u00f3n Acad\u00e## Sección Académica
+- [x] Crear tipos para educación (education.types.ts)
+- [x] Agregar datos académicos en lib/data (education.ts)
+- [x] Crear componente EducationCard
+- [x] Crear EducationSection
+- [x] Integrar en Home.tsx
+- [x] Verificar diseño y responsividad

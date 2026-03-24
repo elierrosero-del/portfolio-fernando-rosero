@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ContactSection } from '@/components/sections/ContactSection';
+import { EducationSection } from '@/components/sections/EducationSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
@@ -23,6 +24,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <EducationSection />
         <TestimonialsSection />
         <ExperienceSection />
         <ContactSection />
