@@ -10,7 +10,7 @@ export interface AvatarPlaceholderProps {
 }
 
 /**
- * Avatar placeholder component with floating animation
+ * Avatar placeholder component with floating animation and professional styling
  */
 export function AvatarPlaceholder({
   className,
@@ -22,7 +22,7 @@ export function AvatarPlaceholder({
       animate="animate"
       transition={avatarFloatTransition}
       className={cn(
-        'relative w-full max-w-xs mx-auto aspect-[3/5] rounded-md border-2 border-dashed border-[#4A6FA8] bg-gradient-to-br from-[#1A2340] to-[#0F1A2E] overflow-hidden',
+        'relative w-full max-w-xs mx-auto aspect-[3/5] rounded-md border-2 border-dashed border-primary dark:border-[#4A6FA8] bg-gradient-to-br from-card to-background dark:from-[#1A2340] dark:to-[#0F1A2E] overflow-hidden',
         className
       )}
     >
@@ -33,7 +33,7 @@ export function AvatarPlaceholder({
       <div className="absolute inset-0 flex items-center justify-center">
         <svg
           viewBox="0 0 200 300"
-          className="w-3/4 h-3/4 text-[#4A6FA8]/30"
+          className="w-3/4 h-3/4 text-primary/30 dark:text-[#4A6FA8]/30"
           fill="currentColor"
         >
           {/* Head */}
@@ -49,7 +49,7 @@ export function AvatarPlaceholder({
       {/* Scan line animation */}
       {showScan && (
         <motion.div
-          className="absolute inset-x-0 h-1 bg-gradient-to-b from-[#4A6FA8]/0 via-[#4A6FA8]/50 to-[#4A6FA8]/0 animate-scan"
+          className="absolute inset-x-0 h-1 bg-gradient-to-b from-primary/0 via-primary/50 to-primary/0 dark:from-[#4A6FA8]/0 dark:via-[#4A6FA8]/50 dark:to-[#4A6FA8]/0 animate-scan"
           initial={{ top: '0%' }}
           animate={{ top: '100%' }}
           transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
@@ -57,7 +57,7 @@ export function AvatarPlaceholder({
       )}
 
       {/* Border glow */}
-      <div className="absolute inset-0 rounded-md border-2 border-[#4A6FA8]/20 pointer-events-none" />
+      <div className="absolute inset-0 rounded-md border-2 border-primary/20 dark:border-[#4A6FA8]/20 pointer-events-none" />
     </motion.div>
   );
 }

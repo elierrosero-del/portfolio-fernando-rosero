@@ -9,7 +9,7 @@ import { SectionHeader } from '../ui/SectionHeader';
 import { SkillBar } from '../ui/SkillBar';
 
 /**
- * About section component with 2-column layout
+ * About section component with 2-column layout and professional styling
  */
 export function AboutSection() {
   const technicalSkills = getSkillsByCategory('technical');
@@ -18,11 +18,11 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 md:py-32 relative overflow-hidden dark:bg-[#141B2D] light:bg-[#F9FAFB]"
+      className="py-20 md:py-32 relative overflow-hidden bg-card dark:bg-[#141B2D]"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-      <div className="absolute top-1/2 left-0 w-1/2 h-1/2 glow-gold-bl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-1/2 h-1/2 glow-primary-bl pointer-events-none" />
 
       <div className="container relative z-10">
         <motion.div
@@ -35,20 +35,20 @@ export function AboutSection() {
           {/* Left Column - Bio, Avatar, and Roles */}
           <motion.div
             variants={fadeUp}
-            className="space-y-8 pb-8 md:pb-0 md:border-r dark:md:border-[#1F2E4D] light:md:border-[#E5E7EB] md:pr-12"
+            className="space-y-8 pb-8 md:pb-0 md:border-r border-border dark:md:border-[#1F2E4D] md:pr-12"
           >
             {/* Section Label */}
             <div className="space-y-2">
-              <p className="text-xs font-semibold dark:text-[#8B95A8] light:text-[#6B7280] tracking-widest uppercase">
+              <p className="text-xs font-semibold text-muted-foreground dark:text-[#8B95A8] tracking-widest uppercase">
                 Acerca de Mí
               </p>
-              <h2 className="text-4xl md:text-5xl font-bold dark:text-[#F5F7FA] light:text-[#0F1A2E] leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground dark:text-[#F5F7FA] leading-tight">
                 El puente entre<br />código y finanzas
               </h2>
             </div>
 
             {/* Bio Text */}
-            <p className="text-base dark:text-[#C5CED9] light:text-[#4B5563] leading-relaxed">
+            <p className="text-base text-muted-foreground dark:text-[#C5CED9] leading-relaxed">
               Soy un profesional con formación dual en Ingeniería de Software y Contaduría Pública. 
               Mi pasión es crear soluciones tecnológicas que impacten positivamente en los negocios.
             </p>
@@ -62,12 +62,12 @@ export function AboutSection() {
             <div className="flex flex-col gap-3">
               <PortfolioBadge variant="outline" className="h-auto py-3 px-4">
                 <div className="flex-1">
-                  <p className="font-semibold text-sm dark:text-[#F5F7FA] light:text-[#0F1A2E]">Ing. Software</p>
+                  <p className="font-semibold text-sm text-foreground dark:text-[#F5F7FA]">Ing. Software</p>
                 </div>
               </PortfolioBadge>
               <PortfolioBadge variant="outline" className="h-auto py-3 px-4">
                 <div className="flex-1">
-                  <p className="font-semibold text-sm dark:text-[#F5F7FA] light:text-[#0F1A2E]">Contador Público</p>
+                  <p className="font-semibold text-sm text-foreground dark:text-[#F5F7FA]">Contador Público</p>
                 </div>
               </PortfolioBadge>
             </div>
@@ -78,7 +78,7 @@ export function AboutSection() {
             {/* Technical Skills */}
             <div className="space-y-6">
               <div>
-                <p className="text-xs font-semibold dark:text-[#8B95A8] light:text-[#6B7280] tracking-widest uppercase mb-4">
+                <p className="text-xs font-semibold text-muted-foreground dark:text-[#8B95A8] tracking-widest uppercase mb-4">
                   Habilidades Técnicas
                 </p>
               </div>
@@ -94,12 +94,12 @@ export function AboutSection() {
             </div>
 
             {/* Divider */}
-            <div className="h-px dark:bg-[#1F2E4D] light:bg-[#E5E7EB]" />
+            <div className="h-px bg-border dark:bg-[#1F2E4D]" />
 
             {/* Financial Skills */}
             <div className="space-y-6">
               <div>
-                <p className="text-xs font-semibold dark:text-[#8B95A8] light:text-[#6B7280] tracking-widest uppercase mb-4">
+                <p className="text-xs font-semibold text-muted-foreground dark:text-[#8B95A8] tracking-widest uppercase mb-4">
                   Habilidades Financieras
                 </p>
               </div>

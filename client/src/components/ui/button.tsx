@@ -22,8 +22,8 @@ export interface ButtonProps
  */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
-        variant = 'primary' as const,
-        size = 'md' as const,
+    variant = 'primary' as const,
+    size = 'md' as const,
     className,
     children,
     ...props
@@ -34,7 +34,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     <button
       ref={ref}
       className={cn(
-        'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark focus-visible:ring-accent-blue disabled:opacity-50 disabled:cursor-not-allowed rounded-md',
+        'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed rounded-md',
         // Size variants
         size === 'sm' && 'px-3 py-1.5 text-sm',
         size === 'md' && 'px-4 py-2 text-base',
@@ -43,13 +43,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         size === 'default' && 'px-4 py-2',
         // Color variants
         variant === 'primary' &&
-          'bg-accent-blue text-text-primary hover:bg-primary-700 active:bg-primary-800 shadow-sm hover:shadow-md',
+          'bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 shadow-sm hover:shadow-md dark:bg-accent-blue dark:hover:bg-primary-700 dark:active:bg-primary-800',
         variant === 'secondary' &&
-          'border border-primary-600 text-accent-blue hover:bg-primary-900/50 active:bg-primary-800 transition-colors',
+          'border border-primary bg-transparent text-primary hover:bg-primary/10 active:bg-primary/20 dark:border-primary-600 dark:text-accent-blue dark:hover:bg-primary-900/50 dark:active:bg-primary-800',
         variant === 'ghost' &&
-          'text-text-primary hover:bg-bg-card-hover active:bg-primary-800',
+          'text-foreground hover:bg-muted active:bg-muted/80 dark:text-text-primary dark:hover:bg-bg-card-hover dark:active:bg-primary-800',
         variant === 'outline' &&
-          'border border-accent-blue text-accent-blue hover:bg-primary-900/50 active:bg-primary-800',
+          'border border-primary text-primary hover:bg-primary/10 active:bg-primary/20 dark:border-accent-blue dark:text-accent-blue dark:hover:bg-primary-900/50 dark:active:bg-primary-800',
         className
       )}
       {...props}

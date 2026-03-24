@@ -108,3 +108,12 @@
 - [x] Actualizar paleta de colores en index.css
 - [x] Ajustar componentes que usan colores naranjas
 - [x] Verificar contraste en todas las secciones
+
+
+## Aplicación de Diseño HTML a Next.js
+- [x] Actualizar paleta de colores en index.css con nuevos valores
+- [x] Refactorizar componentes UI con nuevos estilos (Button, Badge, SkillBar, SectionHeader, TestimonialCard, TimelineItem, AvatarPlaceholder)
+- [x] Rediseñar secciones principales (Hero, About)
+- [x] Mejorar modo claro con contraste profesional
+- [x] Verificar responsividad mobile-first
+- [x] Optimizar animaciones y transiciones

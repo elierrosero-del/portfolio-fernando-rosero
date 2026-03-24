@@ -13,7 +13,7 @@ export interface TimelineItemProps {
 }
 
 /**
- * Timeline item component for experience section
+ * Timeline item component for experience section with professional styling
  */
 export function TimelineItem({
   item,
@@ -28,8 +28,8 @@ export function TimelineItem({
       className={cn(
         'relative p-6 rounded-md border transition-all duration-300',
         isActive
-          ? 'dark:border-[#4A6FA8] dark:bg-[#1A2340] dark:shadow-lg dark:shadow-[#4A6FA8]/20 light:border-[#4A6FA8] light:bg-[#E5E7EB] light:shadow-lg light:shadow-[#4A6FA8]/10'
-          : 'dark:border-[#1F2E4D] dark:bg-[#0F1A2E]/50 dark:hover:border-[#3D5A8A] light:border-[#D1D5DB] light:bg-white light:hover:border-[#4A6FA8]',
+          ? 'border-primary bg-card dark:border-[#4A6FA8] dark:bg-[#1A2340] dark:shadow-lg dark:shadow-[#4A6FA8]/20 shadow-lg shadow-primary/10'
+          : 'border-border bg-background dark:border-[#1F2E4D] dark:bg-[#0F1A2E]/50 dark:hover:border-[#3D5A8A] hover:border-primary/50',
         className
       )}
     >
@@ -38,8 +38,8 @@ export function TimelineItem({
         className={cn(
           'absolute w-3 h-3 rounded-full -translate-x-[calc(100%+12px)] top-8',
           isActive
-            ? 'dark:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50 light:bg-[#4A6FA8]'
-            : 'border-2 dark:border-[#1F2E4D] dark:bg-[#0A0E1A] light:border-[#D1D5DB] light:bg-white'
+            ? 'bg-primary dark:bg-[#4A6FA8] dark:shadow-lg dark:shadow-[#4A6FA8]/50 shadow-lg shadow-primary/50'
+            : 'border-2 border-border bg-background dark:border-[#1F2E4D] dark:bg-[#0A0E1A]'
         )}
       />
 
@@ -47,20 +47,20 @@ export function TimelineItem({
       <div className="space-y-2">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h4 className="text-lg font-semibold dark:text-[#F5F7FA] light:text-[#0F1A2E]">{item.title}</h4>
-            <p className="text-sm dark:text-[#8B95A8] light:text-[#4B5563]">{item.institution}</p>
+            <h4 className="text-lg font-semibold text-foreground dark:text-[#F5F7FA]">{item.title}</h4>
+            <p className="text-sm text-muted-foreground dark:text-[#8B95A8]">{item.institution}</p>
           </div>
-          <span className="text-xs font-mono dark:text-[#4A6FA8] light:text-[#2E446B] whitespace-nowrap">
+          <span className="text-xs font-mono text-primary dark:text-[#4A6FA8] whitespace-nowrap">
             {item.period}
           </span>
         </div>
-        <p className="text-sm dark:text-[#8B95A8] light:text-[#4B5563] leading-relaxed">
+        <p className="text-sm text-muted-foreground dark:text-[#8B95A8] leading-relaxed">
           {item.description}
         </p>
         {item.isActive && (
           <div className="inline-flex items-center gap-2 mt-3">
-            <span className="w-2 h-2 dark:bg-[#4A6FA8] light:bg-[#4A6FA8] rounded-full animate-pulse-dot" />
-            <span className="text-xs font-mono dark:text-[#4A6FA8] light:text-[#2E446B]">Actual</span>
+            <span className="w-2 h-2 bg-primary dark:bg-[#4A6FA8] rounded-full animate-pulse-dot" />
+            <span className="text-xs font-mono text-primary dark:text-[#4A6FA8]">Actual</span>
           </div>
         )}
       </div>

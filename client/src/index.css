@@ -43,7 +43,7 @@
 }
 
 /* ============================================================
-   DARK THEME (Default)
+   DARK THEME (Default) - Professional Corporate Luxury
    ============================================================ */
 :root {
   /* Primary Color: Blue Slate (Professional & Modern) */
@@ -130,7 +130,7 @@
 }
 
 /* ============================================================
-   LIGHT THEME
+   LIGHT THEME - Professional Clean Design
    ============================================================ */
 .light {
   /* Background Colors - Light */
@@ -143,7 +143,7 @@
   --accent-blue: #2E446B;
   --accent-teal: #0D9488;
   --accent-emerald: #059669;
-  --accent-amber: #D97706;
+  --accent-amber: #B45309;
 
   /* Text Colors - Light (Enhanced Contrast) */
   --text-primary: #0F1A2E;

@@ -12,7 +12,7 @@ export interface SkillBarProps {
 }
 
 /**
- * Animated skill bar component
+ * Animated skill bar component with professional styling
  */
 export function SkillBar({ name, level, className }: SkillBarProps) {
   const ref = useRef(null);
@@ -21,15 +21,15 @@ export function SkillBar({ name, level, className }: SkillBarProps) {
   return (
     <div ref={ref} className={cn('mb-6', className)}>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium dark:text-[#F5F7FA] light:text-[#0F1A2E]">{name}</span>
-        <span className="text-xs font-mono dark:text-[#4A6FA8] light:text-[#2E446B]">{level}%</span>
+        <span className="text-sm font-medium text-foreground dark:text-[#F5F7FA]">{name}</span>
+        <span className="text-xs font-mono text-primary dark:text-[#4A6FA8]">{level}%</span>
       </div>
-      <div className="h-2 dark:bg-[#141B2D] light:bg-[#E5E7EB] rounded-full overflow-hidden border dark:border-[#1F2E4D] light:border-[#D1D5DB]">
+      <div className="h-2 bg-muted dark:bg-[#141B2D] rounded-full overflow-hidden border border-border dark:border-[#1F2E4D]">
         <motion.div
           variants={skillBarFill(level)}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="h-full dark:skill-fill light:bg-gradient-to-r light:from-[#4A6FA8] light:to-[#2DD4BF] rounded-full"
+          className="h-full skill-fill dark:skill-fill rounded-full"
         />
       </div>
     </div>

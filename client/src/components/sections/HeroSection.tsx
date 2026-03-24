@@ -10,7 +10,7 @@ import { Button } from '../ui/button';
 import { PortfolioBadge } from '../ui/PortfolioBadge';
 
 /**
- * Hero section component with improved layout
+ * Hero section component with improved layout and professional styling
  */
 export function HeroSection() {
   return (
@@ -20,8 +20,8 @@ export function HeroSection() {
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 glow-gold-tr pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 glow-gold-bl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 glow-primary-tr pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 glow-primary-bl pointer-events-none" />
 
       <div className="container relative z-10">
         <motion.div
@@ -40,19 +40,19 @@ export function HeroSection() {
             {/* Name */}
             <div>
               <motion.h1 variants={fadeUp} className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight">
-                <span className="dark:text-[#F5F7FA] light:text-[#0F1A2E]">Fernando</span>
+                <span className="text-foreground dark:text-[#F5F7FA]">Fernando</span>
                 <br />
-                <span className="dark:text-[#F59E0B] light:text-[#B45309]">Rosero</span>
+                <span className="text-accent dark:text-[#F59E0B]">Rosero</span>
               </motion.h1>
             </div>
 
             {/* Title */}
-            <motion.p variants={fadeUp} className="text-lg md:text-xl dark:text-[#C5CED9] light:text-[#4B5563] max-w-lg">
+            <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted-foreground dark:text-[#C5CED9] max-w-lg">
               {personalData.title}
             </motion.p>
 
             {/* Description */}
-            <motion.p variants={fadeUp} className="text-base dark:text-[#8B95A8] light:text-[#6B7280] leading-relaxed max-w-lg">
+            <motion.p variants={fadeUp} className="text-base text-muted-foreground dark:text-[#8B95A8] leading-relaxed max-w-lg">
               Especialista en desarrollo de software con experiencia en contabilidad y finanzas. Transformo ideas complejas en soluciones elegantes y funcionales.
             </motion.p>
 
@@ -71,10 +71,10 @@ export function HeroSection() {
             <motion.div variants={fadeUp} className="flex gap-8 flex-wrap pt-4">
               {personalData.stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <p className="text-3xl md:text-4xl font-bold dark:text-[#F59E0B] light:text-[#B45309]">
+                  <p className="text-3xl md:text-4xl font-bold text-accent dark:text-[#F59E0B]">
                     {stat.value}
                   </p>
-                  <p className="text-xs dark:text-[#8B95A8] light:text-[#6B7280] font-medium">{stat.label}</p>
+                  <p className="text-xs text-muted-foreground dark:text-[#8B95A8] font-medium">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -92,15 +92,15 @@ export function HeroSection() {
         {/* CV Preview Bar */}
         <motion.div
           variants={fadeUp}
-          className="mt-16 md:mt-20 p-4 md:p-6 dark:bg-[#0F1A2E]/50 light:bg-[#F9FAFB] border dark:border-[#1F2E4D] light:border-[#E5E7EB] rounded-lg flex items-center gap-4 flex-wrap"
+          className="mt-16 md:mt-20 p-4 md:p-6 bg-card dark:bg-[#0F1A2E]/50 border border-border dark:border-[#1F2E4D] rounded-lg flex items-center gap-4 flex-wrap"
         >
           <div className="flex items-center gap-3 flex-1 min-w-[200px]">
-            <FileText size={24} className="dark:text-[#4A6FA8] light:text-[#4A6FA8]" />
+            <FileText size={24} className="text-primary dark:text-[#4A6FA8]" />
             <div>
-              <p className="text-sm font-semibold dark:text-[#F5F7FA] light:text-[#0F1A2E]">
+              <p className="text-sm font-semibold text-foreground dark:text-[#F5F7FA]">
                 fernando-rosero-cv.pdf
               </p>
-              <p className="text-xs dark:text-[#8B95A8] light:text-[#6B7280]">Curriculum Vitae</p>
+              <p className="text-xs text-muted-foreground dark:text-[#8B95A8]">Curriculum Vitae</p>
             </div>
           </div>
           <Button size="sm" variant="primary">
