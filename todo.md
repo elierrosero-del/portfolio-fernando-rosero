@@ -126,3 +126,13 @@
 - [x] Crear EducationSection
 - [x] Integrar en Home.tsx
 - [x] Verificar diseño y responsividad
+
+
+## Actualización de Información Real
+- [x] Actualizar nombre completo (Elier Fernando Rosero Bravo)
+- [x] Actualizar educación con universidades correctas
+- [x] Crear sección de cursos/diplomados
+- [x] Actualizar experiencia laboral contable
+- [x] Actualizar experiencia desarrollo software
+- [x] Crear sección de proyectos de desarrollo
+- [x] Verificar diseño y responsividad

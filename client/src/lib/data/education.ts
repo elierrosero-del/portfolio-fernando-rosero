@@ -1,13 +1,16 @@
 import type { Education } from '@/types/education.types';
 
-export const educationData: Education[] = [
+/**
+ * Academic education data for Elier Fernando Rosero Bravo
+ */
+const educationList: Education[] = [
   {
     id: 'edu-1',
     title: 'Técnico en Mecánica Diesel',
-    institution: 'SENA',
+    institution: 'SENA (Servicio Nacional de Aprendizaje)',
     startYear: 2008,
     endYear: 2010,
-    description: 'Formación técnica en mecánica diesel y sistemas de motores',
+    description: 'Formación técnica en mecánica diesel con énfasis en mantenimiento y reparación de motores.',
   },
   {
     id: 'edu-2',
@@ -15,40 +18,36 @@ export const educationData: Education[] = [
     institution: 'Universidad de Nariño',
     startYear: 2014,
     endYear: 2019,
-    description: 'Profesional en contabilidad y gestión financiera',
+    description: 'Licenciatura en Contabilidad con énfasis en auditoría, finanzas corporativas y normas internacionales de información financiera (NIIF).',
   },
   {
     id: 'edu-3',
     title: 'Magister en Gerencia y Auditoría Tributaria',
-    institution: 'Institución Educativa',
+    institution: 'Universidad Mariana',
     startYear: 2021,
     endYear: 2023,
-    description: 'Postgrado especializado en auditoría y gestión tributaria',
+    description: 'Posgrado especializado en gestión tributaria, auditoría fiscal y cumplimiento normativo empresarial.',
   },
   {
     id: 'edu-4',
-    title: 'Ingeniería de Software',
-    institution: 'Institución Educativa',
+    title: 'Ingeniería de Software (5º Semestre)',
+    institution: 'Universidad Cooperativa de Colombia',
     startYear: 2024,
     endYear: 'Actual',
-    description: 'Estudiante de 5to semestre en Ingeniería de Software',
+    description: 'Programa de ingeniería enfocado en desarrollo de software, arquitectura de sistemas y tecnologías emergentes.',
   },
 ];
+
+/**
+ * Get all education records
+ */
+export function getAllEducation(): Education[] {
+  return educationList;
+}
 
 /**
  * Get education by id
  */
 export function getEducationById(id: string): Education | undefined {
-  return educationData.find((edu) => edu.id === id);
-}
-
-/**
- * Get all education sorted by end year descending
- */
-export function getAllEducation(): Education[] {
-  return [...educationData].sort((a, b) => {
-    const aYear = a.endYear === 'Actual' ? 9999 : a.endYear;
-    const bYear = b.endYear === 'Actual' ? 9999 : b.endYear;
-    return bYear - aYear;
-  });
+  return educationList.find((edu) => edu.id === id);
 }
