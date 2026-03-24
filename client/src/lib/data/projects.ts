@@ -8,60 +8,55 @@ const projectsList: Project[] = [
     id: 'proj-parking',
     title: 'Sistema de Gestión de Parqueaderos',
     description:
-      'Aplicación web completa para la gestión integral de parqueaderos. Permite registrar vehículos, controlar entradas y salidas, generar reportes y administrar tarifas. Interfaz intuitiva con dashboard de estadísticas en tiempo real.',
-    technologies: ['Django', 'Python', 'HTML5', 'Tailwind CSS', 'PostgreSQL'],
+      'Plataforma completa para administración de parqueaderos con control de ingresos, tarifas y reportes en tiempo real. Incluye módulo de estadísticas y gestión de espacios.',
+    technologies: ['Django', 'Python', 'Tailwind CSS', 'PostgreSQL'],
     status: 'production',
-    featured: true,
-  },
-  {
-    id: 'proj-restaurant',
-    title: 'Sistema de Gestión de Restaurantes',
-    description:
-      'Plataforma integral para administración de restaurantes. Gestión de menú, pedidos, inventario, mesas y reportes. Sistema de punto de venta con integración de pagos.',
-    technologies: ['Node.js', 'Express.js', 'MySQL', 'EJS', 'JavaScript'],
-    status: 'testing',
-    featured: true,
-  },
-  {
-    id: 'proj-inventory',
-    title: 'Control de Inventarios y Ventas',
-    description:
-      'Sistema robusto para control de inventario, gestión de stock, registro de ventas y generación de reportes analíticos. Incluye módulo de proveedores y auditoría de cambios.',
-    technologies: ['Laravel 12', 'Vue.js', 'PostgreSQL', 'PHP', 'JavaScript'],
-    status: 'testing',
+    icon: '🅿️',
+    category: 'full-stack',
     featured: true,
   },
   {
     id: 'proj-billing',
     title: 'Facturación Electrónica Colombia',
     description:
-      'Sistema de facturación electrónica conforme a normativa DIAN. Generación de facturas, notas crédito, reportes fiscales y cumplimiento de obligaciones tributarias colombianas.',
-    technologies: ['Python', 'Flask', 'MySQL', 'XML', 'DIAN API'],
+      'Sistema de facturación electrónica cumpliendo normativa DIAN, con generación automática de documentos tributarios, reportes fiscales y cumplimiento de obligaciones.',
+    technologies: ['Python', 'Flask', 'MySQL', 'DIAN API'],
     status: 'production',
+    icon: '🧾',
+    category: 'accounting',
+    featured: true,
   },
   {
-    id: 'proj-university-1',
-    title: 'Proyectos Universitarios - Python',
+    id: 'proj-restaurant',
+    title: 'Gestión de Restaurantes',
     description:
-      'Diversos proyectos desarrollados durante la carrera de Ingeniería de Software. Aplicaciones con Python enfocadas en algoritmos, estructuras de datos y programación orientada a objetos.',
-    technologies: ['Python', 'Jupyter', 'NumPy', 'Pandas'],
-    status: 'archived',
+      'Aplicación para manejo de pedidos, inventario y facturación en restaurantes con interfaz intuitiva. Gestión de mesas, menú dinámico y reportes de ventas.',
+    technologies: ['Node.js', 'Express.js', 'MySQL', 'EJS'],
+    status: 'testing',
+    icon: '🍽️',
+    category: 'full-stack',
+    featured: true,
   },
   {
-    id: 'proj-university-2',
-    title: 'Proyectos Universitarios - Java Spring Boot',
+    id: 'proj-inventory',
+    title: 'Control de Inventarios y Ventas',
     description:
-      'Aplicaciones backend desarrolladas con Java y Spring Boot. Incluye APIs REST, manejo de bases de datos y patrones de diseño empresarial.',
-    technologies: ['Java', 'Spring Boot', 'Maven', 'PostgreSQL', 'REST API'],
-    status: 'archived',
+      'Sistema integral para gestión de inventarios, ventas y reportes financieros con dashboard interactivo. Módulo de proveedores, auditoría y análisis de datos.',
+    technologies: ['Laravel 12', 'Vue.js', 'PostgreSQL', 'PHP'],
+    status: 'testing',
+    icon: '📦',
+    category: 'full-stack',
+    featured: true,
   },
   {
-    id: 'proj-university-3',
-    title: 'Proyectos Universitarios - JavaScript/React',
+    id: 'proj-university',
+    title: 'Proyectos Universitarios',
     description:
-      'Aplicaciones frontend y full-stack desarrolladas con JavaScript y React. Componentes reutilizables, manejo de estado y consumo de APIs.',
-    technologies: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB'],
+      'Desarrollo de múltiples proyectos en distintos lenguajes y tecnologías durante la carrera de Ingeniería de Software. Python, Java con Spring Boot, JavaScript, React y más.',
+    technologies: ['Python', 'Java', 'Spring Boot', 'JavaScript', 'React'],
     status: 'archived',
+    icon: '🎓',
+    category: 'university',
   },
 ];
 
@@ -73,7 +68,7 @@ export function getAllProjects(): Project[] {
 }
 
 /**
- * Get featured projects
+ * Get featured projects (main projects to display)
  */
 export function getFeaturedProjects(): Project[] {
   return projectsList.filter((project) => project.featured);
@@ -84,6 +79,13 @@ export function getFeaturedProjects(): Project[] {
  */
 export function getProjectsByStatus(status: string): Project[] {
   return projectsList.filter((project) => project.status === status);
+}
+
+/**
+ * Get projects by category
+ */
+export function getProjectsByCategory(category: string): Project[] {
+  return projectsList.filter((project) => project.category === category);
 }
 
 /**

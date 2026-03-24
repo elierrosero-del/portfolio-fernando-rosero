@@ -143,3 +143,12 @@
 - [x] Revisar y corregir sección Académica que no aparece
 - [x] Verificar datos en experience.ts y education.ts
 - [x] Verificar componentes ExperienceSection y EducationSection
+
+
+## Sección de Proyectos Mejorada
+- [x] Crear tipos para proyectos mejorados (projects.types.ts)
+- [x] Actualizar datos de proyectos en lib/data/projects.ts
+- [x] Crear componente ProjectCard con mejor estructura
+- [x] Crear componente ProjectsSection
+- [x] Integrar ProjectsSection en Home.tsx
+- [x] Verificar diseño y responsividad en ambos temas
